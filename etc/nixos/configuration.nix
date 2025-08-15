@@ -1,9 +1,10 @@
 { config, pkgs, ... }:
-
 {
   imports = [
     ./hardware-configuration.nix
   ];
+
+  nix.settings.experimental-features = [ "nix-command" "flakes" ];
 
   # Загальні параметри системи
   system.stateVersion = "25.05";
@@ -15,8 +16,8 @@
     noto-fonts-cjk-sans
     noto-fonts-emoji
   ];
-
-  boot.loader.grub.device = "/dev/sda1";
+  boot.loader.systemd-boot.enable = true;
+  # boot.loader.grub.device = "/dev/sda1";
 
   networking.hostName = "nixos";
   networking.networkmanager.enable = true;
