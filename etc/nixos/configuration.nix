@@ -48,6 +48,7 @@
     waybar
     wl-clipboard
     networkmanagerapplet
+    cachix
   ];
 
   users.users.nicourrrn = {
@@ -60,6 +61,16 @@
       firefox
       zed-editor
       alacritty
+      vlc
+      discord-screenaudio
+      # Programming
+      typescript
+      python3Full
+      uv
+      rustup
+      go
+      # Fun
+      picocrypt
     ];
   };
 
