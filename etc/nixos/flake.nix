@@ -18,28 +18,22 @@
   };
 
   outputs = { self, nixpkgs, home-manager, ... }@inputs:
-  let
-    system = "x86_64-linux";
-    username = "nicourrrn";
-    pkgs = import nixpkgs {
-      inherit system;
-    };
-  in {
+  {
     nixosConfigurations.nixos = nixpkgs.lib.nixosSystem {
-      inherit system;
+      specialArgs = {inherit inputs; };
       modules = [
         ./hosts/nixos/configuration.nix
-        home-manager.nixosModules.home-manager
-        {
-          home-manager.useGlobalPkgs = true;
-          home-manager.useUserPackages = true;
-          home-manager.users.${username} = import ./home/${username}.nix;
-          home-manager.extraSpecialArgs = {
-            thorium = inputs.thorium;
-            zen-browser = inputs.zen-browser;
-            inherit system;
-          };
-        }
+        ./hosts/nixos/hardware-configuration.nix
+        ./hosts/nixos/bootloader.nix
+        ./hosts/nixos/audio.nix
+        ./hosts/nixos/console.nix
+        ./hosts/nixos/fonts.nix
+        ./hosts/nixos/i18n.nix
+        ./hosts/nixos/networking.nix
+        ./hosts/nixos/nix-config.nix
+        ./hosts/nixos/time.nix
+        ./hosts/nixos/virtualisaton.nix
+        ./home
       ];
     };
   };
