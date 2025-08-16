@@ -1,23 +1,28 @@
 { config, pkgs, ... }:
+let
+  system-fonts = import ./fonts.nix { inherit pkgs; };
+  system-packages = import ./system-packages.nix {inherit pkgs; };
+in
 {
   imports = [
     ./hardware-configuration.nix
+    ./nix-config.nix
   ];
-
-  nix.settings.experimental-features = [ "nix-command" "flakes" ];
 
   # Загальні параметри системи
   system.stateVersion = "25.05";
   time.timeZone = "Europe/Kyiv";
   i18n.defaultLocale = "uk_UA.UTF-8";
+  console = {
+    earlySetup = true;
+    font = "cyr-sun16";
+    keyMap = "us";
+  };
 
-  fonts.packages = with pkgs; [
-    noto-fonts
-    noto-fonts-cjk-sans
-    noto-fonts-emoji
-  ];
+  environment.systemPackages = system-packages;
+  fonts.packages = system-fonts;
+
   boot.loader.systemd-boot.enable = true;
-  # boot.loader.grub.device = "/dev/sda1";
 
   networking.hostName = "nixos";
   networking.networkmanager.enable = true;
@@ -35,53 +40,27 @@
   xdg.portal.enable = true;
   xdg.portal.extraPortals = [ pkgs.xdg-desktop-portal-gtk ];
 
-  programs.hyprland.enable = true;
-  environment.sessionVariables = {
-    NIXOS_OZONE_WL = "1";
-  };
+  environment.sessionVariables = { NIXOS_OZONE_WL = "1"; };
 
-  programs.zsh.enable = true;
-
-  environment.systemPackages = with pkgs; [
-    neovim
-    kitty
-    waybar
-    wl-clipboard
-    networkmanagerapplet
-    cachix
-  ];
+  virtualisation.docker.enable = true;
 
   users.users.nicourrrn = {
     isNormalUser = true;
     description = "nicourrrn";
-    extraGroups = [ "wheel" "networkmanager" "audio" "video" "games"];
+    extraGroups = [ "wheel" "networkmanager" "audio" "video" "games" "docker"];
     shell = pkgs.zsh;
     home = "/home/nicourrrn";
-    packages = with pkgs; [
-      firefox
-      zed-editor
-      alacritty
-      vlc
-      discord-screenaudio
-      # Programming
-      typescript
-      python3Full
-      uv
-      rustup
-      go
-      # Fun
-      picocrypt
-    ];
   };
-
   security.sudo.enable = true;
 
+  # Replace to config files
+  programs.hyprland.enable = true;
+  programs.zsh.enable = true;
   services.greetd = {
     enable = true;
     settings = {
       default_session = {
-        command = "${pkgs.hyprland}/bin/Hyprland";
-        user = "nicourrrn";
+        command = "${pkgs.tuigreet}/bin/tuigreet --cmd Hyprland";
       };
     };
   };
