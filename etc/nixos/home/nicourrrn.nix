@@ -1,4 +1,4 @@
-{ config, pkgs, inputs, ...}@flake-packages:
+{ config, pkgs, flake-packages, ...}:
 let
   user-packages = import ./user-packages.nix { inherit pkgs; inherit flake-packages; };
 in

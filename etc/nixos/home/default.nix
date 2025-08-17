@@ -12,8 +12,7 @@ in
       home-manager.useUserPackages = true;
       home-manager.users.${username} = import ./${username}.nix;
       home-manager.extraSpecialArgs = {
-        thorium = inputs.thorium;
-        zen-browser = inputs.zen-browser;
+        flake-packages = inputs;
         inherit system;
       };
     }

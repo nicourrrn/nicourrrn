@@ -18,7 +18,7 @@
     nil-lsp = {
       url = "github:oxalica/nil";
       inputs.nixpkgs.follows = "nixpkgs";
-    }
+    };
   };
 
   outputs = { self, nixpkgs, ... }@inputs:
