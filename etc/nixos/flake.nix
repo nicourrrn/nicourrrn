@@ -30,6 +30,7 @@
         ./hosts/nixos/hardware-configuration.nix
         ./hosts/nixos/bootloader.nix
         ./hosts/nixos/audio.nix
+        ./hosts/nixos/bluethooth.nix
         ./hosts/nixos/console.nix
         ./hosts/nixos/fonts.nix
         ./hosts/nixos/i18n.nix

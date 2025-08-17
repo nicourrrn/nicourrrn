@@ -1,5 +1,6 @@
-{ pkgs, flake-packages, ... } :
-with pkgs; [
+{ pkgs, flake-packages, ... }:
+with pkgs;
+[
   vlc
   # Workspace
   alacritty
@@ -14,6 +15,8 @@ with pkgs; [
   rustup
   go
   docker
+  # LSP servers
+  nixd
   # Coding
   httpie
   zed-editor
@@ -21,7 +24,6 @@ with pkgs; [
   keepassxc
   easyeffects
   # Social
-  firefox
   discord-screenaudio
   telegram-desktop
   spotify
