@@ -34,4 +34,5 @@ with pkgs; [
   libreoffice-qt6-fresh
   flake-packages.zen-browser.packages.${system}.default
   flake-packages.thorium.packages.${system}.thorium-avx2
+  flake-packages.nil.packages.${system}.nil
 ]

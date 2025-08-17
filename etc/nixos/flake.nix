@@ -15,9 +15,13 @@
       url = "github:Rishabh5321/thorium_flake";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+    nil-lsp = {
+      url = "github:oxalica/nil";
+      inputs.nixpkgs.follows = "nixpkgs";
+    }
   };
 
-  outputs = { self, nixpkgs, home-manager, ... }@inputs:
+  outputs = { self, nixpkgs, ... }@inputs:
   {
     nixosConfigurations.nixos = nixpkgs.lib.nixosSystem {
       specialArgs = {inherit inputs; };
@@ -33,6 +37,7 @@
         ./hosts/nixos/nix-config.nix
         ./hosts/nixos/time.nix
         ./hosts/nixos/virtualisaton.nix
+        ./hosts/nixos/services.nix
         ./home
       ];
     };
