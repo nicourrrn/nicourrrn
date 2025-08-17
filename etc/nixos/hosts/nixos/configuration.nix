@@ -15,7 +15,7 @@ in
   environment.sessionVariables = {
     NIXOS_OZONE_WL = "1";
   };
-  programs.zsh.enable = true;
+  # programs.zsh.enable = true;
   users.users.nicourrrn = {
     isNormalUser = true;
     description = "nicourrrn";
@@ -26,14 +26,10 @@ in
       "video"
       "games"
     ];
-    # shell = "${pkgs.xonsh}/bin/xonsh";
-    shell = pkgs.zsh;
+    shell = "${pkgs.xonsh}/bin/xonsh";
+    # shell = pkgs.zsh;
   };
   security.sudo.enable = true;
-
-  # Replace to config files
-  # programs.hyprland.enable = true;
-  # programs.zsh.enable = true;
 
   services.greetd = {
     enable = true;

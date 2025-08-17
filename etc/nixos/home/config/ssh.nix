@@ -8,8 +8,7 @@
       Host github.com
         Hostname github.com
         User git
-        IdentifyFile ~/.ssh/github
-        IdentifyOnly yes
+        IdentityFile ~/.ssh/github
     '';
   };
 }
