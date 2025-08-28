@@ -1,4 +1,4 @@
-{ config, pkgs, ... }:
+{ ... }:
 {
   wayland.windowManager.hyprland.enable = true;
   wayland.windowManager.hyprland.settings = {
@@ -31,6 +31,8 @@
     };
     "exec-once" = [
       "alacritty"
+      "waybar"
+      "hyprpaper"
     ];
     monitor = [
       "eDP-1, highres, 1600x0, 1"
@@ -79,6 +81,14 @@
     bindm = [
       "$mainMod, mouse:272, movewindow"
       "$mainMod, mouse:273, resizewindow"
+    ];
+    bindel = [
+      ", XF86MonBrightnessUp, exec, brightnessctl s 10%+"
+      ", XF86MonBrightnessDown, exec, brightnessctl s 10%-"
+      ", XF86AudioRaiseVolume, exec, volumectl up"
+      ", XF86AudioLowerVolume, exec, volumectl down"
+      ", XF86AudioMute, exec, volumectl toggle-mute"
+      ", XF86AudioMicMute, exec, volumectl -m toggle-mute"
     ];
   };
 }

@@ -1,6 +1,5 @@
-{ config, pkgs, ... }:
+{ pkgs, ... }:
 let
-  system-fonts = import ./fonts.nix { inherit pkgs; };
   system-packages = import ./system-packages.nix { inherit pkgs; };
 in
 {
@@ -15,7 +14,11 @@ in
   environment.sessionVariables = {
     NIXOS_OZONE_WL = "1";
   };
-  # programs.zsh.enable = true;
+  programs.zsh.enable = true;
+
+  imports = [
+    ./fonts.nix
+  ];
   users.users.nicourrrn = {
     isNormalUser = true;
     description = "nicourrrn";
@@ -26,8 +29,8 @@ in
       "video"
       "games"
     ];
-    shell = "${pkgs.xonsh}/bin/xonsh";
-    # shell = pkgs.zsh;
+    # shell = "${pkgs.xonsh}/bin/xonsh";
+    shell = pkgs.zsh;
   };
   security.sudo.enable = true;
 

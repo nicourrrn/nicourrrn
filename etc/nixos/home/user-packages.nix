@@ -20,6 +20,7 @@ with pkgs;
   # Coding
   httpie
   zed-editor
+  gparted
   # Utils
   keepassxc
   easyeffects

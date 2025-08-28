@@ -5,5 +5,7 @@
     ./ssh.nix
     ./xdg.nix
     ./hyprland.nix
+    ./hyprpaper.nix
+    ./waybar.nix
   ];
 }

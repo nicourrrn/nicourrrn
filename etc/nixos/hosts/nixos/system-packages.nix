@@ -1,5 +1,6 @@
 { pkgs }:
-with pkgs; [
+with pkgs;
+[
   neovim
   kitty
   waybar
@@ -16,4 +17,8 @@ with pkgs; [
   yq-go
   eza
   fzf
+  brightnessctl
+  hyprpaper
+  qutebrowser
+  hyprpolkitagent
 ]
