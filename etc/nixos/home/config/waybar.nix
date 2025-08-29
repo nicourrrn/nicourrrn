@@ -3,6 +3,7 @@
   programs.waybar.enable = true;
   programs.waybar.settings = {
     topBar = {
+      name = "top_bar";
       layer = "top";
       position = "top";
       height = 30;
@@ -255,7 +256,231 @@
         on-click = "fish -c wlogout_uniqe";
       };
     };
+    # bottomBar = {
+    #   name = "bottom_bar";
+    #   layer = "top";
+    #   position = "bottom";
+    #   height = 36;
+    #   spacing = 4;
+    #   modules-left = [ "user" ];
+    #   modules-center = [ "hyprland/window" ];
+    #   modules-right = [
+    #     "keyboard-state"
+    #     "hyprland/language"
+    #   ];
+    #   "hyprland/window" = {
+    #     format = "👼 {title} 😈";
+    #     max-length = 50;
+    #   };
+    #   "hyprland/language" = {
+    #     format-en = "🇺🇸 ENG (US)";
+    #     format-uk = "🇺🇦 UKR";
+    #     format-ru = "🇷🇺 RUS";
+    #     keyboard-name = "at-translated-set-2-keyboard";
+    #     on-click = "hyprctl switchxkblayout at-translated-set-2-keyboard next";
+    #   };
+    #   keyboard-state = {
+    #     capslock = true;
+    #     format = "{name} {icon}";
+    #     format-icons = {
+    #       locked = "󰌾";
+    #       unlocked = "󰍀";
+    #     };
+    #   };
+    #   user = {
+    #     format = " <span color='#8bd5ca'>{user}</span> (up <span color='#f5bde6'>{work_d} d</span> <span color='#8aadf4'>{work_H} h</span> <span color='#eed49f'>{work_M} min</span> <span color='#a6da95'>↑</span>)";
+    #     icon = true;
+    #   };
+    # };
+    # letfBar = {
+    #   name = "left_bar";
+    #   layer = "top";
+    #   position = "left";
+    #   spacing = 4;
+    #   width = 75;
+    #   margin-top = 10;
+    #   margin-bottom = 10;
+    #   modules-left = [ "wlr/taskbar" ];
+    #   modules-center = [
+    #     "cpu"
+    #     "memory"
+    #     "disk"
+    #     "temperature"
+    #     "battery"
+    #     "backlight"
+    #     "pulseaudio"
+    #     "systemd-failed-units"
+    #   ];
+    #   modules-right = [ "tray" ];
+
+    #   "wlr/taskbar" = {
+    #     format = "{icon}";
+    #     icon-size = 20;
+    #     icon-theme = "Numix-Circle";
+    #     tooltip-format = "{title}";
+    #     on-click = "activate";
+    #     on-click-right = "close";
+    #     on-click-middle = "fullscreen";
+    #   };
+
+    #   tray = {
+    #     icon-size = 20;
+    #     spacing = 2;
+    #   };
+
+    #   cpu = {
+    #     format = "󰻠{usage}%";
+    #     states = {
+    #       high = 90;
+    #       upper-medium = 70;
+    #       medium = 50;
+    #       lower-medium = 30;
+    #       low = 10;
+    #     };
+    #     on-click = "wezterm start btop";
+    #     on-click-right = "wezterm start btm";
+    #   };
+
+    #   memory = {
+    #     format = "󰍛{percentage}%";
+    #     tooltip-format = "Main: ({used} GiB/{total} GiB)({percentage}%), available {avail} GiB\nSwap: ({swapUsed} GiB/{swapTotal} GiB)({swapPercentage}%), available {swapAvail} GiB";
+    #     states = {
+    #       high = 90;
+    #       upper-medium = 70;
+    #       medium = 50;
+    #       lower-medium = 30;
+    #       low = 10;
+    #     };
+    #     on-click = "wezterm start btop";
+    #     on-click-right = "wezterm start btm";
+    #   };
+
+    #   disk = {
+    #     format = "󰋊{percentage_used}%";
+    #     tooltip-format = "({used}/{total})({percentage_used}%) in '{path}', available {free}({percentage_free}%)";
+    #     states = {
+    #       high = 90;
+    #       upper-medium = 70;
+    #       medium = 50;
+    #       lower-medium = 30;
+    #       low = 10;
+    #     };
+    #     on-click = "wezterm start btop";
+    #     on-click-right = "wezterm start btm";
+    #   };
+
+    #   temperature = {
+    #     tooltip = false;
+    #     thermal-zone = 8;
+    #     critical-threshold = 80;
+    #     format = "{icon}{temperatureC}󰔄";
+    #     format-critical = "🔥{icon}{temperatureC}󰔄";
+    #     format-icons = [
+    #       ""
+    #       ""
+    #       ""
+    #       ""
+    #       ""
+    #     ];
+    #   };
+
+    #   battery = {
+    #     states = {
+    #       high = 90;
+    #       upper-medium = 70;
+    #       medium = 50;
+    #       lower-medium = 30;
+    #       low = 10;
+    #     };
+    #     format = "{icon}{capacity}%";
+    #     format-charging = "󱐋{icon}{capacity}%";
+    #     format-plugged = "󰚥{icon}{capacity}%";
+    #     format-time = "{H} h {M} min";
+    #     format-icons = [
+    #       "󱃍"
+    #       "󰁺"
+    #       "󰁻"
+    #       "󰁼"
+    #       "󰁽"
+    #       "󰁾"
+    #       "󰁿"
+    #       "󰂀"
+    #       "󰂁"
+    #       "󰂂"
+    #       "󰁹"
+    #     ];
+    #     tooltip-format = "{timeTo}";
+    #   };
+
+    #   backlight = {
+    #     format = "{icon}{percent}%";
+    #     format-icons = [
+    #       "󰌶"
+    #       "󱩎"
+    #       "󱩏"
+    #       "󱩐"
+    #       "󱩑"
+    #       "󱩒"
+    #       "󱩓"
+    #       "󱩔"
+    #       "󱩕"
+    #       "󱩖"
+    #       "󰛨"
+    #     ];
+    #     tooltip = false;
+    #     states = {
+    #       high = 90;
+    #       upper-medium = 70;
+    #       medium = 50;
+    #       lower-medium = 30;
+    #       low = 10;
+    #     };
+    #     reverse-scrolling = true;
+    #     reverse-mouse-scrolling = true;
+    #   };
+
+    #   pulseaudio = {
+    #     states = {
+    #       high = 90;
+    #       upper-medium = 70;
+    #       medium = 50;
+    #       lower-medium = 30;
+    #       low = 10;
+    #     };
+    #     tooltip-format = "{desc}";
+    #     format = "{icon}{volume}%\n{format_source}";
+    #     format-bluetooth = "󰂱{icon}{volume}%\n{format_source}";
+    #     format-bluetooth-muted = "󰂱󰝟{volume}%\n{format_source}";
+    #     format-muted = "󰝟{volume}%\n{format_source}";
+    #     format-source = "󰍬{volume}%";
+    #     format-source-muted = "󰍭{volume}%";
+    #     format-icons = {
+    #       headphone = "󰋋";
+    #       "hands-free" = "";
+    #       headset = "󰋎";
+    #       phone = "󰄜";
+    #       portable = "󰦧";
+    #       car = "󰄋";
+    #       speaker = "󰓃";
+    #       hdmi = "󰡁";
+    #       hifi = "󰋌";
+    #       default = [
+    #         "󰕿"
+    #         "󰖀"
+    #         "󰕾"
+    #       ];
+    #     };
+    #     reverse-scrolling = true;
+    #     reverse-mouse-scrolling = true;
+    #     on-click = "pavucontrol";
+    #   };
+
+    #   "systemd-failed-units" = {
+    #     format = "✗ {nr_failed}";
+    #   };
+    # };
   };
+
   programs.waybar.style = ''
     @define-color base   #24273a;
     @define-color mantle #1e2030;

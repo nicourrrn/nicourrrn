@@ -13,6 +13,7 @@ with pkgs;
   unzip
   p7zip
   ripgrep
+  dust
   jq
   yq-go
   eza
@@ -21,4 +22,5 @@ with pkgs;
   hyprpaper
   qutebrowser
   hyprpolkitagent
+  nix-tree
 ]

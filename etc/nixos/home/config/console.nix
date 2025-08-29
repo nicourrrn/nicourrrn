@@ -1,10 +1,14 @@
 { ... }:
 {
-  programs.zsh.enable = true;
+  # programs.zsh.enable = true;
   programs.git = {
     enable = true;
     userName = "nicourrrn";
     userEmail = "s57111702@gmail.com";
+  };
+  programs.fish = {
+    enable = true;
+
   };
   programs.starship = {
     enable = true;

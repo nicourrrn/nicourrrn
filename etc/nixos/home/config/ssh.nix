@@ -3,7 +3,8 @@
   services.ssh-agent.enable = true;
   programs.ssh = {
     enable = true;
-    addKeysToAgent = "yes";
+    matchBlocks."*".addKeysToAgent = "yes";
+    enableDefaultConfig = false;
     extraConfig = ''
       Host github.com
         Hostname github.com

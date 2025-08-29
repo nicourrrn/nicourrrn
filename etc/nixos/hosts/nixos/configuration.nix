@@ -14,7 +14,7 @@ in
   environment.sessionVariables = {
     NIXOS_OZONE_WL = "1";
   };
-  programs.zsh.enable = true;
+  programs.fish.enable = true;
 
   imports = [
     ./fonts.nix
@@ -30,7 +30,7 @@ in
       "games"
     ];
     # shell = "${pkgs.xonsh}/bin/xonsh";
-    shell = pkgs.zsh;
+    shell = pkgs.fish;
   };
   security.sudo.enable = true;
 

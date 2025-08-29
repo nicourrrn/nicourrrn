@@ -1,6 +1,9 @@
-{ config, pkgs, flake-packages, ...}:
+{ pkgs, flake-packages, ... }:
 let
-  user-packages = import ./user-packages.nix { inherit pkgs; inherit flake-packages; };
+  user-packages = import ./user-packages.nix {
+    inherit pkgs;
+    inherit flake-packages;
+  };
 in
 {
   home.username = "nicourrrn";
