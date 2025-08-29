@@ -23,4 +23,6 @@ with pkgs;
   qutebrowser
   hyprpolkitagent
   nix-tree
+  grim
+  slurp
 ]

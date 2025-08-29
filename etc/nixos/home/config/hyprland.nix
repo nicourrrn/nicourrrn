@@ -122,7 +122,7 @@
       "HDMI-A-1, preferred, 0x0, 1"
     ];
     bind = [
-      ", Print, exec, grimblast copy area"
+      ", Print, exec, fish -c screenshot_to_clipboard"
       "$mainMod, Return, exec, alacritty"
       "$mainMod, D, exec, rofi -show drun"
       "$mainMod, W, togglegroup"
