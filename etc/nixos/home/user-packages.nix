@@ -21,6 +21,7 @@ with pkgs;
   httpie
   zed-editor
   gparted
+  flyctl
   # Utils
   keepassxc
   easyeffects

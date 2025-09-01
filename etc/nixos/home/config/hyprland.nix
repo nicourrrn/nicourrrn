@@ -109,8 +109,14 @@
       touchpad = {
         natural_scroll = "yes";
         tap-and-drag = true;
+        scroll_factor = 0.7;
       };
+    };
 
+    device = {
+      name = "elan0515:00-04f3:3142-touchpad";
+      natural_scroll = true;
+      sensitivity = -0.3;
     };
     exec-once = [
       "alacritty"

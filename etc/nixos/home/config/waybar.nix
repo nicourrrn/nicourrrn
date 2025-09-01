@@ -17,19 +17,23 @@
       ];
       modules-center = [
         "clock#time"
-        "custom/separator"
-        "clock#week"
         "custom/separator_dot"
-        "clock#month"
+        "clock#week"
         "custom/separator"
         "clock#calendar"
+        "custom/separator"
+        "battery"
       ];
       modules-right = [
         "bluetooth"
         "network"
-        "group/misc"
-        "custom/logout_menu"
+        "tray"
       ];
+
+      tray = {
+        icon-size = 20;
+        spacing = 2;
+      };
       "hyprland/workspaces" = {
         on-click = "activate";
         format = "{icon}";
@@ -53,7 +57,7 @@
         tooltip = false;
       };
       "clock#time" = {
-        format = "{:%I:%M %p %Ez}";
+        format = "{:%H:%M}";
       };
       "custom/separator" = {
         format = "|";
@@ -66,10 +70,6 @@
 
       "clock#week" = {
         format = "{:%a}";
-      };
-
-      "clock#month" = {
-        format = "{:%h}";
       };
 
       "clock#calendar" = {
@@ -95,8 +95,8 @@
       };
 
       clock = {
-        format = "{:%I:%M %p %Ez | %a • %h | %F}";
-        format-alt = "{:%I:%M %p}";
+        format = "{:%H:%M| %a • %h | %F}";
+        format-alt = "{:%H:%M}";
         tooltip-format = "<tt><small>{calendar}</small></tt>";
         actions = {
           "on-click-right" = "mode";
@@ -254,6 +254,34 @@
         exec = "echo '{ \"text\":\"󰐥\", \"tooltip\": \"logout menu\" }";
         interval = "once";
         on-click = "fish -c wlogout_uniqe";
+      };
+
+      battery = {
+        states = {
+          high = 90;
+          upper-medium = 70;
+          medium = 50;
+          lower-medium = 30;
+          low = 10;
+        };
+        format = "{icon}{capacity}%";
+        format-charging = "󱐋{icon}{capacity}%";
+        format-plugged = "󰚥{icon}{capacity}%";
+        format-time = "{H} h {M} min";
+        format-icons = [
+          "󱃍"
+          "󰁺"
+          "󰁻"
+          "󰁼"
+          "󰁽"
+          "󰁾"
+          "󰁿"
+          "󰂀"
+          "󰂁"
+          "󰂂"
+          "󰁹"
+        ];
+        tooltip-format = "{timeTo}";
       };
     };
     # bottomBar = {
