@@ -12,8 +12,8 @@
       notification_limit = 8;
       gap_size = 7;
       frame_width = 2;
-      width = 300;
-      height = 100;
+      width = 400;
+      height = 150;
       follow = "keyboard";
       always_run_script = true;
       mouse_left_click = "do_action, close_current";

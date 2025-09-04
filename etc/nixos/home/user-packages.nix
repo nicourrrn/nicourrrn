@@ -36,6 +36,12 @@ with pkgs;
   # Work
   obsidian
   libreoffice-qt6-fresh
+  gimp
+  loupe
+  cava
+  termdown
+  # mkchromecast
+  qbittorrent-enhanced
   flake-packages.zen-browser.packages.${system}.default
   flake-packages.thorium.packages.${system}.thorium-avx2
   flake-packages.nil-lsp.packages.${system}.nil

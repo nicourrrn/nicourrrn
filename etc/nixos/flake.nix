@@ -43,6 +43,7 @@
           ./hosts/nixos/services.nix
           ./hosts/nixos/fingerprint.nix
           ./hosts/nixos/nvidia.nix
+          ./hosts/nixos/nix-ld.nix
           ./home
         ];
       };

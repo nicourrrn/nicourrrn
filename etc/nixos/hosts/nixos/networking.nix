@@ -1,4 +1,4 @@
-{pkgs, ...}:
+{ pkgs, ... }:
 {
   networking.hostName = "nixos";
   # networking.networkmanager.enable = true;
@@ -20,4 +20,5 @@
     # wigtk
     impala
   ];
+  services.avahi.enable = true;
 }
