@@ -124,8 +124,8 @@
       "hyprpaper"
     ];
     monitor = [
-      "eDP-1, highres@60.00Hz, auto, 1"
-      "HDMI-A-1, preferred, 0x0, 1"
+      "eDP-1, highres@60.00Hz, 0x0, 1"
+      "HDMI-A-1, preferred, auto, 1"
     ];
     bind = [
       ", Print, exec, fish -c screenshot_to_clipboard"
@@ -230,7 +230,7 @@
     };
 
     gestures = {
-      workspace_swipe = "on";
+      gesture = "3, horizontal, workspace";
     };
     misc = {
       disable_hyprland_logo = true;

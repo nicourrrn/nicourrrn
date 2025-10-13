@@ -1,4 +1,4 @@
-{ pkgs, ...}:
+{ pkgs, ... }:
 {
   # Enable Services
   programs.direnv.enable = true;
@@ -41,7 +41,7 @@
     wtype
     wlrctl
     waybar
-    rofi-wayland
+    rofi
     dunst
     avizo
     wlogout

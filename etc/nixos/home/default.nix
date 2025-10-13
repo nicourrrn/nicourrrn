@@ -1,4 +1,4 @@
-{ username, system, inputs, ...}:
+{ inputs, ... }:
 let
   home-manager = inputs.home-manager;
   system = "x86_64-linux";
