@@ -8,8 +8,14 @@ in
 
   environment.systemPackages = system-packages;
 
-  xdg.portal.enable = true;
-  xdg.portal.extraPortals = [ pkgs.xdg-desktop-portal-gtk ];
+  xdg.portal = {
+    enable = true;
+    extraPortals = with pkgs; [
+      xdg-desktop-portal-hyprland
+      xdg-desktop-portal-gtk
+    ];
+    config.common.default = "hyprland";
+  };
 
   environment.sessionVariables = {
     NIXOS_OZONE_WL = "1";
