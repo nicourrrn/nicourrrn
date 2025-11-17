@@ -21,7 +21,10 @@
   # services.gnome.core-shell.enable = true;
   # services.udev.packages = with pkgs; [ gnome.gnome-settings-daemon ];
 
+  security.polkit.enable = true;
+
   environment.systemPackages = with pkgs; [
+    polkit_gnome
     at-spi2-atk
     qt6.qtwayland
     psi-notify

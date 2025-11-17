@@ -35,7 +35,6 @@ in
       "video"
       "games"
     ];
-    # shell = "${pkgs.xonsh}/bin/xonsh";
     shell = pkgs.fish;
   };
   security.sudo.enable = true;
@@ -48,6 +47,7 @@ in
       };
     };
   };
+  nixpkgs.config.android_sdk.accept_license = true;
   # services.dunst = {
   #   enable = true;
   # };

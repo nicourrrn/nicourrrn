@@ -122,6 +122,7 @@
       "alacritty"
       "waybar"
       "hyprpaper"
+      "/usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1"
     ];
     monitor = [
       "eDP-1, highres@60.00Hz, 0x0, 1"
@@ -135,7 +136,7 @@
       "$mainMod, $left, changegroupactive, b"
       "ALT, TAB, changegroupactive, f"
       "$mainMod, $right, changegroupactive, f"
-      #$mainMod SHIFT, W, lockgroups, lock,
+      "$mainMod SHIFT, W, lockactivegroup, toggle"
       "$mainMod, T, exec, thunar"
 
       "$mainMod, 1, workspace, 1"

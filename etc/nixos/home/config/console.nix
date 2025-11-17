@@ -3,8 +3,10 @@
   # programs.zsh.enable = true;
   programs.git = {
     enable = true;
-    userName = "nicourrrn";
-    userEmail = "s57111702@gmail.com";
+    settings.user = {
+      name = "nicourrrn";
+      email = "s57111702@gmail.com";
+    };
   };
   programs.fish = {
     enable = true;

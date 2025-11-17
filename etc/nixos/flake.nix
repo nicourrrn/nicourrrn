@@ -20,10 +20,14 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
     hyprland.url = "git+https://github.com/hyprwm/Hyprland?submodules=1";
+    tuios = {
+      url = "github:Gaurav-Gosain/tuios";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
   };
 
   outputs =
-    { self, nixpkgs, ... }@inputs:
+    { nixpkgs, ... }@inputs:
     {
       nixosConfigurations.nixos = nixpkgs.lib.nixosSystem {
         specialArgs = { inherit inputs; };
@@ -44,6 +48,7 @@
           ./hosts/nixos/fingerprint.nix
           ./hosts/nixos/nvidia.nix
           ./hosts/nixos/nix-ld.nix
+          ./hosts/nixos/ollama.nix
           ./home
         ];
       };

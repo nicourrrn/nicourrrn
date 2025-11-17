@@ -7,19 +7,24 @@ with pkgs;
   zellij
   neofetch
   # Programming
-  zig
-  typescript
   nodePackages.nodejs
+  typescript
   bun
-  python3
+  # python3
   uv
   rustc
   cargo
   go
   docker
-  deno
+  clang
+  # cmake
+  # ninja
+  # pkg-config
+  androidenv.androidPkgs.androidsdk
+  jdk
   # LSP servers
   nixd
+  gemini-cli
   # Coding
   httpie
   httpie-desktop
@@ -30,7 +35,6 @@ with pkgs;
   keepassxc
   easyeffects
   # Social
-  discord-screenaudio
   telegram-desktop
   spotify
   spotifyd
@@ -44,12 +48,34 @@ with pkgs;
   loupe
   cava
   termdown
-  # mkchromecast
   qbittorrent-enhanced
 
-  zoom
+  hyprpicker
+  vesktop
+  zoom-us
+  ngrok
+  fvm
+  nvd
+  just
+  ripdrag
+  bat
 
+  ollama-cuda
+
+  bat
+  p7zip
+  fuse
+  godot
+
+  obs-studio
+
+  flyctl
+
+  python314FreeThreading
+
+  rar
   flake-packages.zen-browser.packages.${system}.default
   flake-packages.thorium.packages.${system}.thorium-avx2
   flake-packages.nil-lsp.packages.${system}.nil
+  flake-packages.tuios.packages.${system}.tuios
 ]
