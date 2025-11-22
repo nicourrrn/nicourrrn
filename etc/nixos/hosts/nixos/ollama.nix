@@ -6,6 +6,7 @@
     loadModels = ["gemma3:4b" "llama3.1:8b"];
   };
 
+
   # services.open-webui ={
   #   enable = true;
   #   environment = {

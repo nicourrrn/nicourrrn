@@ -1,12 +1,12 @@
-{
-  imports = [
-    ./console.nix
-    ./alacritty.nix
-    ./ssh.nix
-    ./xdg.nix
-    ./hyprland.nix
-    ./hyprpaper.nix
-    ./waybar.nix
-    ./dunst.nix
-  ];
+{ lib, pkgs, ... }@args :
+let
+  moduleDir = ./.;
+  filesToImport = builtins.readDir moduleDir;
+  importFile = name: type:
+    if type == "regular" && lib.hasSuffix ".nix" name && name != "default.nix" then
+      import (moduleDir + "/${name}") args
+    else
+      null;
+in {
+  imports =  lib.filter (x: x != null) (lib.mapAttrsToList importFile filesToImport);
 }

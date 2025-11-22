@@ -1,11 +1,9 @@
-{ pkgs }:
+{ pkgs, ... }:
 with pkgs;
 [
-  neovim
   kitty
   waybar
   wl-clipboard
-  networkmanagerapplet
   cachix
   btop-cuda
   zip
@@ -20,9 +18,14 @@ with pkgs;
   fzf
   brightnessctl
   hyprpaper
+  hyprpicker
   qutebrowser
   hyprpolkitagent
   nix-tree
   grim
   slurp
+  fuse
+  rar
+  pkg-config
+  gtk4
 ]

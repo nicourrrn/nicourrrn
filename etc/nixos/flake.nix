@@ -27,29 +27,19 @@
   };
 
   outputs =
-    { nixpkgs, ... }@inputs:
+    { self, nixpkgs, ... }@inputs:
+    let
+      system = "x86_64-linux";
+    in
     {
       nixosConfigurations.nixos = nixpkgs.lib.nixosSystem {
+        inherit system;
         specialArgs = { inherit inputs; };
+        extraArgs = {flake-packages = inputs;};
         modules = [
-          ./hosts/nixos/configuration.nix
-          ./hosts/nixos/hardware-configuration.nix
-          ./hosts/nixos/bootloader.nix
-          ./hosts/nixos/audio.nix
-          ./hosts/nixos/bluethooth.nix
-          ./hosts/nixos/console.nix
-          ./hosts/nixos/fonts.nix
-          ./hosts/nixos/i18n.nix
-          ./hosts/nixos/networking.nix
-          ./hosts/nixos/nix-config.nix
-          ./hosts/nixos/time.nix
-          ./hosts/nixos/virtualisaton.nix
-          ./hosts/nixos/services.nix
-          ./hosts/nixos/fingerprint.nix
-          ./hosts/nixos/nvidia.nix
-          ./hosts/nixos/nix-ld.nix
-          ./hosts/nixos/ollama.nix
+          ./hosts/nixos
           ./home
+          ./hardware-configuration.nix
         ];
       };
     };
