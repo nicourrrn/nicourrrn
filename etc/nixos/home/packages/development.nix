@@ -1,7 +1,9 @@
 { pkgs, flake-packages, ... }:
 with pkgs; [
   zed-editor
+  yaak
   nodePackages.nodejs
+  nix-output-monitor
   typescript
   bun
   uv
@@ -14,7 +16,7 @@ with pkgs; [
   androidenv.androidPkgs.androidsdk
   jdk
   nixd # LSP servers
-  flake-packages.nil-lsp.packages.${system}.nil
+  flake-packages.nil-lsp.packages.${stdenv.hostPlatform.system}.nil
   httpie
   httpie-desktop
   flyctl
@@ -23,4 +25,6 @@ with pkgs; [
   fvm
   godot
   devenv
+  flake-packages.fasm2.packages.${stdenv.hostPlatform.system}.default
+  # jupyter
 ]

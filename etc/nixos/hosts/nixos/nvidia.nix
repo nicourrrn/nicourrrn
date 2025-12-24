@@ -1,4 +1,4 @@
-{ pkgs, lib, config, ... }:
+{ lib, config, ... }:
 {
   services.xserver.videoDrivers = [
     "nvidia"
@@ -21,7 +21,6 @@
     open = true;
     nvidiaSettings = true;
     package = config.boot.kernelPackages.nvidiaPackages.production;
-
     prime = {
       offload = {
         enable = true;

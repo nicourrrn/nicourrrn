@@ -28,4 +28,5 @@ with pkgs;
   rar
   pkg-config
   gtk4
+  gcc
 ]

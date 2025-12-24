@@ -1,11 +1,10 @@
-{...}:
+{ flake-packages, pkgs, ...}:
 {
-  services.ollama = {
-    enable = true;
-    acceleration = "cuda";
-    loadModels = ["gemma3:4b" "llama3.1:8b"];
-  };
-
+  # services.ollama = {
+  #   enable = true;
+  #   loadModels = ["gemma3:4b" "llama3.1:8b" "qwen3-vl:8b"];
+  #   package = flake-packages.nixified-ai.packages.${pkgs.system}.ollama-cuda;
+  # };
 
   # services.open-webui ={
   #   enable = true;

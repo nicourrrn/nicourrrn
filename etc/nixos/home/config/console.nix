@@ -1,11 +1,14 @@
 { ... }:
 {
-  # programs.zsh.enable = true;
-  programs.git = {
+  programs.alacritty = {
     enable = true;
-    settings.user = {
-      name = "nicourrrn";
-      email = "s57111702@gmail.com";
+    settings = {
+      env.TERM = "xterm-256color";
+      font = {
+        size = 12;
+      };
+      scrolling.multiplier = 5;
+      selection.save_to_clipboard = true;
     };
   };
   programs.fish = {
@@ -29,6 +32,13 @@
       aws.disabled = true;
       gcloud.disabled = true;
       line_break.disabled = true;
+    };
+  };
+  programs.git = {
+    enable = true;
+    settings.user = {
+      name = "nicourrrn";
+      email = "s57111702@gmail.com";
     };
   };
 }

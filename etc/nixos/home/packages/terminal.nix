@@ -4,10 +4,10 @@ with pkgs; [
   zellij
   neofetch
   gemini-cli
-  ollama-cuda
+  # flake-packages.nixified-ai.packages.${pkgs.system}.ollama-cuda
   termdown
   nvd
   just
   bat
-  flake-packages.tuios.packages.${system}.tuios
+  # flake-packages.tuios.packages.${stdenv.hostPlatform.system}.tuios
 ]

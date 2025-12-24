@@ -24,18 +24,27 @@
       url = "github:Gaurav-Gosain/tuios";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+    devenv.url = "github:cachix/devenv/v1.10";
+    nixified-ai.url = "github:nixified-ai/flake";
+    fasm2.url = "github:nicourrrn/fasm2-flake";
   };
 
   outputs =
-    { self, nixpkgs, ... }@inputs:
+    { self, nixpkgs, devenv, ... }@inputs:
     let
       system = "x86_64-linux";
     in
     {
+      devShells.${system} = {
+        python = devenv.lib.mkShell {
+          modules = [
+            ./home/enviroments/python.nix
+          ];
+        };
+      };
       nixosConfigurations.nixos = nixpkgs.lib.nixosSystem {
         inherit system;
-        specialArgs = { inherit inputs; };
-        extraArgs = {flake-packages = inputs;};
+        specialArgs = { inherit inputs; flake-packages = inputs;};
         modules = [
           ./hosts/nixos
           ./home

@@ -10,6 +10,6 @@ with pkgs; [
   cava
   obs-studio
   obsidian
-  flake-packages.zen-browser.packages.${system}.default
-  flake-packages.thorium.packages.${system}.thorium-avx2
+  flake-packages.zen-browser.packages.${stdenv.hostPlatform.system}.default
+  flake-packages.thorium.packages.${stdenv.hostPlatform.system}.thorium-avx2
 ]

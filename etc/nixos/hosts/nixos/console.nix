@@ -5,4 +5,5 @@
     font = "cyr-sun16";
     keyMap = "us";
   };
+  programs.fish.enable = true;
 }
